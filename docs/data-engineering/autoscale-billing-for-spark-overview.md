@@ -47,7 +47,7 @@ When enabled, Autoscale Billing changes how Spark workloads are handled:
 
 ## Job concurrency and queuing behavior
 
-When Autoscale Billing is enabled, Spark job concurrency is governed by the **maximum Capacity Unit (CU) limit** defined by the Fabric Capacity Admin. Unlike the standard capacity model, there is **no bursting or smoothing**.
+When Autoscale Billing is enabled, Spark job concurrency is governed by the **maximum Capacity Unit (CU) limit** defined by the Fabric Capacity Admin. Unlike the standard capacity model, there is **no bursting or smoothing** for Spark workloads once this setting is enabled.
 
 - **Interactive Spark jobs** (such as *Lakehouse operations*, *table preview*, *Load to Table*, or *interactive notebook queries*) will be **throttled** once the available CUs are fully utilized.
 - **Background Spark jobs** (triggered by *pipelines*, *job scheduler*, *API executions*, *Spark job definitions*, or *table maintenance*) will be **queued**.
